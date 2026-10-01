@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Inscripción - Autoridades de Mesa</title>
+
+    <link rel="stylesheet" href="../css/output.css">
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+    
+
+
+   
+<main class="max-w-4xl mx-auto px-6 py-10">
+
+    <!-- titulo de la pagina -->
+    <div class="mb-8">
+        <h2 class="text-3xl font-bold text-gray-800">
+            Inscripción como Autoridad de Mesa
+        </h2>
+
+        <p class="text-gray-600 mt-2">
+            Completá tus datos personales para realizar tu postulación.
+        </p>
+    </div>
+
+    <!-- formulario -->
+    <section class="bg-white rounded-xl shadow-md p-8">
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+            Datos personales
+        </h3>
+
+        <p class="text-sm text-gray-500 mb-6">
+            Los campos marcados con * son obligatorios
+        </p>
+
+        <form id="formInscripcion">
+
+            <!-- Distrito electoral -->
+    <div class="mb-4">
+        <label for="distrito" >
+            Distrito electoral *
+        </label>
+
+        <input
+            type="text"
+            id="distrito"
+            name="distrito"
+            class="border border-gray-400 rounded px-3 py-2"
+            required
+        >
+    </div>
+
+    <div  class="mb-4">
+        <label for="nombre">Nombre *</label>
+        <input 
+            type="text" 
+            id="nombre" 
+            name="nombre"
+            class="border border-gray-400 rounded px-3 py-2"
+            required
+        >
+    </div>
+
+    <div  class="mb-4">
+        <label for="apellido">Apellido *</label>
+        <input 
+            type="text" 
+            id="apellido" 
+            name="apellido"
+            class="border border-gray-400 rounded px-3 py-2"
+            required
+        >
+    </div>
+
+    <div class="mb-4" >
+        <label for="dni">DNI *</label>
+        <input 
+            type="text" 
+            id="dni" 
+            name="dni"
+            class="border border-gray-400 rounded px-3 py-2"
+            required
+        >
+    </div>
+
+    <div class="mb-4">
+        <label for="fechaNacimiento">Fecha de nacimiento *</label>
+        <input 
+            type="date" 
+            id="fechaNacimiento" 
+            name="fechaNacimiento"
+            class="border border-gray-400 rounded px-3 py-2"
+            required
+        >
+    </div>
+
+      
+    <div class="mb-4">
+        <label for="domicilio">
+            Domicilio actual *
+        </label>
+
+        <input
+            type="text"
+            id="domicilio"
+            name="domicilio"
+            class="border border-gray-400 rounded px-3 py-2"
+            required
+        >
+    </div>
+
+    <div class="mb-4">
+        <label for="email">Correo electrónico *</label>
+        <input 
+            type="email" 
+            id="email" 
+            name="email"
+            class="border border-gray-400 rounded px-3 py-2"
+            required
+        >
+    </div>
+
+    <div class="mb-4">
+        <label for="telefono">Telefono *</label>
+        <input 
+            type="tel" 
+            id="telefono" 
+            name="telefono"
+            class="border border-gray-400 rounded px-3 py-2"
+            required
+        >
+    </div>
+
+    
+<div>
+    <p>
+        ¿Tuvo experiencia previa como autoridad de mesa? *
+    </p>
+
+    <div class="flex gap-6">
+        <label>
+            <input type="radio" name="experiencia" value="si" required>
+            Sí
+        </label>
+
+        <label>
+            <input type="radio" name="experiencia" value="no">
+            No
+        </label>
+    </div>
+</div>
+
+
+<div>
+    <p>
+        ¿Realizó capacitaciones? *
+    </p>
+
+    <div class="flex gap-6">
+        <label>
+            <input type="radio" name="capacitacion" value="si" required>
+            Sí
+        </label>
+
+        <label>
+            <input type="radio" name="capacitacion" value="no">
+            No
+        </label>
+    </div>
+</div>
+
+
+<div>
+    <p >
+        ¿Tiene afiliación partidaria? *
+    </p>
+
+    <div class="flex gap-6">
+        <label>
+            <input type="radio" name="afiliacion" value="si" required>
+            Sí
+        </label>
+
+        <label>
+            <input type="radio" name="afiliacion" value="no">
+            No
+        </label>
+    </div>
+</div>
+
+
+<div id="campoPartido" class="hidden">
+    <label for="partido" class="block text-sm font-medium text-gray-700 mb-1">
+        ¿A qué partido?
+    </label>
+
+    <input
+        type="text"
+        id="partido"
+        name="partido"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+</div>
+
+<!-- Charla de orientación -->
+<div>
+    <p >
+        ¿Tiene interés en participar de una charla de orientación? *
+    </p>
+
+    <div class="flex gap-6">
+        <label>
+            <input type="radio" name="interesCharla" value="si" required>
+            Sí
+        </label>
+
+        <label>
+            <input type="radio" name="interesCharla" value="no">
+            No
+        </label>
+    </div>
+</div>
+
+
+    <button type="submit"  class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700">
+        Enviar inscripción
+    </button>
+
+</form>
+
+
+    </section>
+
+</main>
+
+<script src="../js/inscripcion.js"></script>
+</body>
+</html>
