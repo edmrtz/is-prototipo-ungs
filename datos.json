@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "distrito": "distrito prueba",
+    "nombre": "nombre prueba",
+    "apellido": "apellido prueba",
+    "dni": "dni prueba",
+    "fechaNacimiento": "2026-10-01",
+    "domicilio": "domicilio prueba",
+    "email": "correo@prueba.com",
+    "telefono": "telefono prueba",
+    "experiencia": "si",
+    "capacitacion": "si",
+    "afiliacion": "si",
+    "partido": "partido prueba",
+    "interesCharla": "si"
+  }
+]

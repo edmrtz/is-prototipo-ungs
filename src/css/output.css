@@ -194,6 +194,9 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .ml-8 {
+    margin-left: calc(var(--spacing) * 8);
+  }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
@@ -229,6 +232,9 @@
   }
   .w-full {
     width: 100%;
+  }
+  .w-200 {
+    width: 200px;
   }
   .max-w-4xl {
     max-width: var(--container-4xl);
@@ -340,6 +346,9 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
   }
   .text-blue-100 {
     color: var(--color-blue-100);

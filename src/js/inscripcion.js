@@ -93,7 +93,36 @@ formulario.addEventListener("submit", function (evento) {
         return;
     }
 
+    const datos = {
+        distrito: distrito,
+        nombre: nombre,
+        apellido: apellido,
+        dni: dni,
+        fechaNacimiento: fechaNacimiento,
+        domicilio: domicilio,
+        email: email,
+        telefono: telefono,
+        experiencia: experiencia.value,
+        capacitacion: capacitacion.value,
+        afiliacion: afiliacion.value,
+        partido: partido.value,
+        interesCharla: interesCharla.value
+    };
 
-    // Si todo está correcto
-    alert("Los datos ingresados son correctos.");
-});
+    try {
+        fetch("/inscripcion", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(datos)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert("Los datos ingresados son correctos.");
+        });
+    } catch (error) {
+        console.error("Error al guardar los datos:", error);
+        alert("Error al guardar los datos.");
+    }
+});    
