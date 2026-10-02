@@ -119,7 +119,15 @@ formulario.addEventListener("submit", function (evento) {
         })
         .then(response => response.json())
         .then(data => {
-            alert("Los datos ingresados son correctos.");
+            
+            alert("Inscripción registrada correctamente.");
+
+            // Limpia todos los campos del formulario
+            formulario.reset();
+
+            // Oculta nuevamente el campo del partido
+            campoPartido.classList.add("hidden");
+            partido.required = false;
         });
     } catch (error) {
         console.error("Error al guardar los datos:", error);
