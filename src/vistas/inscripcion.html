@@ -29,7 +29,9 @@
     </div>
 
     <!-- formulario -->
-    <section class="bg-white rounded-xl shadow-md p-8">
+    <section class="border border-gray-300 rounded-lg px-3 py-2 bg-gray-50
+       focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500
+       focus:border-blue-500">
 
         <h3 class="text-xl font-semibold text-gray-800 mb-2">
             Datos personales
@@ -43,7 +45,7 @@
 
             <!-- Distrito electoral -->
             <div class="flex items-center mb-6">
-                <label for="distrito" class="flex-1 w-200">
+                <label for="distrito" class="w-48">
                     Distrito electoral <span class="text-red-700">*</span>
                 </label>
 
@@ -57,7 +59,7 @@
             </div>
 
             <div class="flex items-center mb-6">
-                <label for="nombre" class="flex-1 w-200">
+                <label for="nombre" class="w-48">
                     Nombre <span class="text-red-700">*</span>
                 </label>
                 <input 
@@ -70,7 +72,7 @@
             </div>
 
             <div class="flex items-center mb-6">
-                <label for="apellido" class="flex-1 w-200">
+                <label for="apellido" class="w-48">
                     Apellido <span class="text-red-700">*</span>
                 </label>
                 <input 
@@ -83,7 +85,7 @@
             </div>
 
             <div class="flex items-center mb-6">
-                <label for="dni" class="flex-1 w-200">
+                <label for="dni" class="w-48">
                     DNI <span class="text-red-700">*</span>
                 </label>
                 <input 
@@ -96,7 +98,7 @@
             </div>
 
             <div class="flex items-center mb-6">
-                <label for="fechaNacimiento" class="flex-1 w-200">
+                <label for="fechaNacimiento" class="w-48">
                     Fecha de nacimiento <span class="text-red-700">*</span>
                 </label>
                 <input 
@@ -109,7 +111,7 @@
             </div>
       
             <div class="flex items-center mb-6">
-                <label for="domicilio" class="flex-1 w-200">
+                <label for="domicilio" class="w-48">
                     Domicilio actual <span class="text-red-700">*</span>
                 </label>
 
@@ -123,7 +125,7 @@
             </div>
 
             <div class="flex items-center mb-6">
-                <label for="email" class="flex-1 w-200">
+                <label for="email" class="w-48">
                     Correo electrónico <span class="text-red-700">*</span>
                 </label>
                 <input 
@@ -136,7 +138,7 @@
             </div>
 
             <div class="flex items-center mb-6">
-                <label for="telefono" class="flex-1 w-200">
+                <label for="telefono" class="w-48">
                     Teléfono <span class="text-red-700">*</span>
                 </label>
                 <input 
@@ -235,7 +237,8 @@
                 </div>
             </div>
 
-            <button type="submit"  class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700">
+            <button type="submit"   class="bg-blue-600 text-white font-medium px-6 py-3.5 rounded-lg
+           hover:bg-blue-700 cursor-pointer transition">
                 Enviar inscripción
             </button>
         </form>
