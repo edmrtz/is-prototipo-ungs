@@ -1,7 +1,7 @@
 const formulario = document.getElementById("formInscripcion");
 
 const opcionesAfiliacion = document.querySelectorAll(
-  'input[name="afiliacion"]'
+  'input[name="afiliacion"]',
 );
 
 const campoPartido = document.getElementById("campoPartido");
@@ -23,37 +23,39 @@ opcionesAfiliacion.forEach(function (opcion) {
 formulario.addEventListener("submit", function (evento) {
   evento.preventDefault();
 
-  const distrito = document.getElementById("distrito").value.trim();
   const nombre = document.getElementById("nombre").value.trim();
   const apellido = document.getElementById("apellido").value.trim();
   const dni = document.getElementById("dni").value.trim();
   const fechaNacimiento = document.getElementById("fechaNacimiento").value;
-  const domicilio = document.getElementById("domicilio").value.trim();
   const email = document.getElementById("email").value.trim();
   const telefono = document.getElementById("telefono").value.trim();
+  const calle = document.getElementById("calle").value.trim();
+  const numero = document.getElementById("numero").value.trim();
+  const ciudad = document.getElementById("ciudad").value.trim();
+  const provincia = document.getElementById("provincia").value.trim();
 
   const experiencia = document.querySelector(
-    'input[name="experiencia"]:checked'
+    'input[name="experiencia"]:checked',
   );
   const capacitacion = document.querySelector(
-    'input[name="capacitacion"]:checked'
+    'input[name="capacitacion"]:checked',
   );
-  const afiliacion = document.querySelector(
-    'input[name="afiliacion"]:checked'
-  );
+  const afiliacion = document.querySelector('input[name="afiliacion"]:checked');
   const interesCharla = document.querySelector(
-    'input[name="interesCharla"]:checked'
+    'input[name="interesCharla"]:checked',
   );
 
   if (
-    distrito === "" ||
     nombre === "" ||
     apellido === "" ||
     dni === "" ||
     fechaNacimiento === "" ||
-    domicilio === "" ||
     email === "" ||
     telefono === "" ||
+    calle === "" ||
+    numero === "" ||
+    ciudad === "" ||
+    provincia === "" ||
     !experiencia ||
     !capacitacion ||
     !afiliacion ||
@@ -69,14 +71,16 @@ formulario.addEventListener("submit", function (evento) {
   }
 
   const datos = {
-    distrito: distrito,
     nombre: nombre,
     apellido: apellido,
     dni: dni,
     fechaNacimiento: fechaNacimiento,
-    domicilio: domicilio,
     email: email,
     telefono: telefono,
+    calle: calle,
+    numero: numero,
+    ciudad: ciudad,
+    provincia: provincia,
     experiencia: experiencia.value,
     capacitacion: capacitacion.value,
     afiliacion: afiliacion.value,

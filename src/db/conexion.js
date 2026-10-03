@@ -9,7 +9,6 @@ db.pragma("foreign_keys = on");
 db.exec(`
   create table if not exists inscripciones(
     id integer primary key autoincrement,
-    distrito text not null,
     nombre text not null,
     apellido text not null,
     dni text not null,

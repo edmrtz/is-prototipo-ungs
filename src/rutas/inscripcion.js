@@ -1,6 +1,7 @@
 const express = require("express");
 const db = require("../db/conexion");
 const path = require("path");
+const { prepararDatos } = require("../js/normalizar");
 
 const router = express.Router();
 
@@ -19,16 +20,18 @@ router.get("/inscripciones", (request, response) => {
   }
 });
 
-router.post("/inscripciones", (request, response) => {
+router.post("/inscripciones", async (request, response) => {
   const {
-    distrito,
     nombre,
     apellido,
     dni,
     fechaNacimiento,
-    domicilio,
     email,
     telefono,
+    calle,
+    numero,
+    ciudad,
+    provincia,
     experiencia,
     capacitacion,
     afiliacion,
@@ -37,14 +40,16 @@ router.post("/inscripciones", (request, response) => {
   } = request.body;
 
   if (
-    !distrito ||
     !nombre ||
     !apellido ||
     !dni ||
     !fechaNacimiento ||
-    !domicilio ||
     !email ||
     !telefono ||
+    !calle ||
+    !numero ||
+    !ciudad ||
+    !provincia ||
     !experiencia ||
     !capacitacion ||
     !afiliacion ||
@@ -55,26 +60,11 @@ router.post("/inscripciones", (request, response) => {
   }
 
   const query = `insert into inscripciones (
-    distrito, nombre, apellido, dni, fecha_nacimiento, domicilio, email, telefono, experiencia, capacitacion, afiliacion, partido, interes_charla
-  ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
-
-  const valores = [
-    distrito,
-    nombre,
-    apellido,
-    dni,
-    fechaNacimiento,
-    domicilio,
-    email,
-    telefono,
-    experiencia,
-    capacitacion,
-    afiliacion,
-    afiliacion === "si" ? partido.trim() : null,
-    interesCharla,
-  ];
+    nombre, apellido, dni, fecha_nacimiento, domicilio, email, telefono, experiencia, capacitacion, afiliacion, partido, interes_charla
+  ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
   try {
+    const valores = await prepararDatos(request.body);
     const resultado = db.prepare(query).run(valores);
     response.json({
       mensaje: "Inscripcion guardada correctamente",
