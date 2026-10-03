@@ -18,7 +18,7 @@
     "dev": "node --watch ./src/server.js"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/cli": "^4.3.0",
     "better-sqlite3": "^13.0.3",
     "express": "^5.2.1",
     "tailwindcss": "^4.3.3"

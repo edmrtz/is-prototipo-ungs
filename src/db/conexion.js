@@ -4,7 +4,7 @@ const path = require("path");
 const dbPath = path.join(__dirname, "../../database.sqlite");
 const db = new DATABASE(dbPath);
 
-db.pragma("foreign_keys = ON");
+db.pragma("foreign_keys = on");
 
 db.exec(`
   create table if not exists inscripciones(
@@ -18,7 +18,7 @@ db.exec(`
     email text not null,
     telefono text not null,
     experiencia text not null,
-    capacitacion text not nnull,
+    capacitacion text not null,
     afiliacion text not null,
     partido text,
     interes_charla text not null
