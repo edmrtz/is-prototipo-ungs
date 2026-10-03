@@ -11,14 +11,23 @@
 
   <body class="bg-gray-50 min-h-screen">
     <main class="max-w-4xl mx-auto px-6 py-10">
-      <div class="mb-8">
-        <h2 class="text-3xl font-bold text-gray-800">
-          Inscripción como Autoridad de Mesa
-        </h2>
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-800">
+            Inscripción como Autoridad de Mesa
+          </h2>
 
-        <p class="text-gray-600 mt-2">
-          Completá tus datos personales para realizar tu postulación.
-        </p>
+          <p class="text-gray-600 mt-2">
+            Completá tus datos personales para realizar tu postulación.
+          </p>
+        </div>
+
+        <a
+          href="/charlas"
+          class="border border-white text-white bg-blue-600 hover:bg-blue-700 font-medium px-4 py-2 rounded-lg transition"
+        >
+          Próximas charlas
+        </a>
       </div>
 
       <section
@@ -33,20 +42,6 @@
         </p>
 
         <form id="formInscripcion">
-          <div class="flex items-center mb-6">
-            <label for="distrito" class="w-48">
-              Distrito electoral <span class="text-red-700">*</span>
-            </label>
-
-            <input
-              type="text"
-              id="distrito"
-              name="distrito"
-              class="border border-gray-400 rounded px-3 py-2"
-              required
-            />
-          </div>
-
           <div class="flex items-center mb-6">
             <label for="nombre" class="w-48">
               Nombre <span class="text-red-700">*</span>
@@ -100,20 +95,6 @@
           </div>
 
           <div class="flex items-center mb-6">
-            <label for="domicilio" class="w-48">
-              Domicilio actual <span class="text-red-700">*</span>
-            </label>
-
-            <input
-              type="text"
-              id="domicilio"
-              name="domicilio"
-              class="border border-gray-400 rounded px-3 py-2"
-              required
-            />
-          </div>
-
-          <div class="flex items-center mb-6">
             <label for="email" class="w-48">
               Correo electrónico <span class="text-red-700">*</span>
             </label>
@@ -139,7 +120,67 @@
             />
           </div>
 
-          <div class="mb-4">
+          <hr class="border-gray-300 mb-6" />
+
+          <div class="mb-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Domicilio</h3>
+
+            <div class="flex items-center mb-6">
+              <label for="calle" class="w-48">
+                Calle <span class="text-red-700">*</span>
+              </label>
+              <input
+                type="text"
+                id="calle"
+                name="calle"
+                class="border border-gray-400 rounded px-3 py-2"
+                required
+              />
+            </div>
+
+            <div class="flex items-center mb-6">
+              <label for="numero" class="w-48">
+                Número <span class="text-red-700">*</span>
+              </label>
+              <input
+                type="text"
+                id="numero"
+                name="numero"
+                class="border border-gray-400 rounded px-3 py-2"
+                required
+              />
+            </div>
+
+            <div class="flex items-center mb-6">
+              <label for="ciudad" class="w-48">
+                Ciudad <span class="text-red-700">*</span>
+              </label>
+              <input
+                type="text"
+                id="ciudad"
+                name="ciudad"
+                class="border border-gray-400 rounded px-3 py-2"
+                required
+              />
+            </div>
+
+            <div class="flex items-center mb-6">
+              <label for="provincia" class="w-48">
+                Provincia <span class="text-red-700">*</span>
+              </label>
+              <input
+                type="text"
+                id="provincia"
+                name="provincia"
+                class="border border-gray-400 rounded px-3 py-2"
+                required
+              />
+            </div>
+          </div>
+
+          <hr class="border-gray-300 mb-6" />
+
+          <div class="flex items-center gap-6 mb-4">
             <p>
               ¿Tuvo experiencia previa como autoridad de mesa?
               <span class="text-red-700">*</span>
@@ -147,74 +188,46 @@
 
             <div class="flex gap-6">
               <label>
-                <input
-                  type="radio"
-                  name="experiencia"
-                  value="si"
-                  required
-                  class="ml-8"
-                />
+                <input type="radio" name="experiencia" value="si" required />
                 Sí
               </label>
 
               <label>
-                <input
-                  type="radio"
-                  name="experiencia"
-                  value="no"
-                  class="ml-8"
-                />
+                <input type="radio" name="experiencia" value="no" />
                 No
               </label>
             </div>
           </div>
 
-          <div class="mb-4">
+          <div class="flex items-center gap-6 mb-4">
             <p>¿Realizó capacitaciones? <span class="text-red-700">*</span></p>
 
             <div class="flex gap-6">
               <label>
-                <input
-                  type="radio"
-                  name="capacitacion"
-                  value="si"
-                  required
-                  class="ml-8"
-                />
+                <input type="radio" name="capacitacion" value="si" required />
                 Sí
               </label>
 
               <label>
-                <input
-                  type="radio"
-                  name="capacitacion"
-                  value="no"
-                  class="ml-8"
-                />
+                <input type="radio" name="capacitacion" value="no" />
                 No
               </label>
             </div>
           </div>
 
-          <div class="mb-4">
+          <div class="flex items-center gap-6 mb-4">
             <p>
               ¿Tiene afiliación partidaria? <span class="text-red-700">*</span>
             </p>
 
             <div class="flex gap-6">
               <label>
-                <input
-                  type="radio"
-                  name="afiliacion"
-                  value="si"
-                  required
-                  class="ml-8"
-                />
+                <input type="radio" name="afiliacion" value="si" required />
                 Sí
               </label>
 
               <label>
-                <input type="radio" name="afiliacion" value="no" class="ml-8" />
+                <input type="radio" name="afiliacion" value="no" />
                 No
               </label>
             </div>
@@ -236,7 +249,7 @@
             />
           </div>
 
-          <div class="mb-4">
+          <div class="flex items-center gap-6 mb-4">
             <p>
               ¿Tiene interés en participar de una charla de orientación?
               <span class="text-red-700">*</span>
@@ -244,23 +257,12 @@
 
             <div class="flex gap-6">
               <label>
-                <input
-                  type="radio"
-                  name="interesCharla"
-                  value="si"
-                  required
-                  class="ml-8"
-                />
+                <input type="radio" name="interesCharla" value="si" required />
                 Sí
               </label>
 
               <label>
-                <input
-                  type="radio"
-                  name="interesCharla"
-                  value="no"
-                  class="ml-8"
-                />
+                <input type="radio" name="interesCharla" value="no" />
                 No
               </label>
             </div>
