@@ -24,8 +24,36 @@ L.tileLayer(`${OSM}`, {
   maxZoom: 19,
 }).addTo(map);
 
+const marcadores = {};
+
 coordenadas.forEach((lugar) => {
-  L.marker([lugar.lat, lugar.lon])
+  const marker =
+    L.marker([lugar.lat, lugar.lon])
     .addTo(map)
     .bindPopup(`<b>${lugar.nombre}</b>`);
+
+    marcadores[lugar.nombre] = {marker, lat: lugar.lat, lon: lugar.lon};
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  function configurarBoton(idBoton, nombreLugar) {
+    const boton = document.getElementById(idBoton);
+  
+
+  if(boton) {
+    boton.addEventListener("click", () => {
+     const datosLugar = marcadores[nombreLugar];
+     
+     if (datosLugar) {
+      map.flyTo([datosLugar.lat, datosLugar.lon], 16);
+      datosUNGS.maker.openPopup();
+     }
+    });
+  }
+}
+    
+configurarBoton("btnUNGS", "UNGS");
+configurarBoton("btnCCUNGS", "Centro Cultural UNGS");
+configurarBoton("btnPlazaCarretas", "Plaza Las Carretas");
+
 });
