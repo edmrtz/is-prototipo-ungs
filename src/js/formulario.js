@@ -112,3 +112,13 @@ formulario.addEventListener("submit", function (evento) {
       alert("Error al guardar los datos.");
     });
 });
+
+function soloPermitirNumeros(input) {
+  input.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, "");
+  });
+}
+
+soloPermitirNumeros(document.getElementById("dni"));
+soloPermitirNumeros(document.getElementById("telefono"));
+soloPermitirNumeros(document.getElementById("numero"));
